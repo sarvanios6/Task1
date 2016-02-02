@@ -1,0 +1,56 @@
+
+<html>
+<head>
+<title>WebImages</title>
+
+<!-- Call to js and css file
+    <link rel="stylesheet" type="text/css" href="stylesheets/" media="screen" />-->
+
+    <script type="text/javascript" src="javascripts/jquery.js"></script>
+
+
+</head>
+<body>
+
+
+<div id="preloader" class="outer">
+
+   <style>
+    #pre
+    {
+    max-width: 50px;
+    max-height: 50px;
+    display: block;
+    margin:auto;
+    padding-top:50px;
+
+
+    }
+    </style>
+
+</div>
+</body>
+</html>
+
+
+<script>
+
+    $(document).ready(function()   //Use ready() to make a function available after the document is loaded
+    {
+
+        for(i= 1; i <= 10; i++) //Loading Icon Loop
+        {
+         // console.log("<img  src='images/"+i+".jpeg' style='width:375px; height: 150px;' alt='Top 10 Images'> ");//load the loop images in the div frame
+            $("#preloader").append("<div style='width:250px; height: 150px; position: relative;float: left;'><img id='pre' src='images/loading.gif'   alt='loading' ></div>");//Alternative loadin ICON set
+        }
+        function loding()
+        {
+            $("#preloader").html("");
+            for(i= 1; i <= 10; i++){
+            $("#preloader").append("<a href='webimage.html'><img src='images/"+i+".jpeg' style='width:250px; height: 150px;' alt='Top 10 Images' ></a>");// Loading the images and when onclicked the images to reload the same page
+            }
+        }
+        setTimeout(loding, 10000);//Set Time in Millisecond
+    });
+
+</script>
